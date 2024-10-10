@@ -1,3 +1,4 @@
+
 public class CustomStringMethods {
     
     public CustomStringMethods() { }
@@ -70,16 +71,30 @@ public class CustomStringMethods {
     }
   
     public String yellOrWhisper(String myString) {
-        int index = 0;
-        char x = myString.charAt(index);
-        boolean y = Character.isUpperCase(x);
-        if (y = true) {
+        String str = myString.substring(0,1);
+        char something = str.charAt(0);
+        boolean some = Character.isUpperCase(something);
+        if (some) {
             myString = myString.toUpperCase();
             return myString;
         } else {
             myString = myString.toLowerCase();
             return myString;
         }
+    }
+
+    public String makeRandomStrings(String myString) {
+        int length = myString.length();
+        int x = 0;
+        while (x<length) {
+            String str = myString.substring(x, x+3);
+            String z = myString.substring(x, x + (length - 2));
+            String y = myString.substring(0,x+1);
+            myString = y + z;
+            myString = myString + str;
+            x++;
+        }
+        return myString;
     }
   
   
